@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/libs/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+       <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="{{path('home')}}">Pill os</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+      <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('home')}}"><i class="fas fa-fw fa-chart-pie"></i> Miner Status</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-cog"></i>Settings</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{path('pools')}}">Pools</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cards.html">Security</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cards.html">Network</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="cards.html">Performance</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-plug"></i>Maintenance</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="chart-c3.html">Reboot</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="chart-c3.html">Facroty reset</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html"><i class="fa fa-microchip"></i>Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{path('app_logout')}}"><i class="fas fa-power-off"></i> Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- ============================================================== -->
+                <!-- pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">{{ block('title')}} </h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="{{path('home')}}" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{ block('title')}}</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- end pageheader -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <p>
+                            {% block body %}{% endblock %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            Copyright © 2021 . All rights reserved by <a href="https://sarkesh.org">Sarkesh LTD</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="javascript: void(0);">About</a>
+                                <a href="javascript: void(0);">Support</a>
+                                <a href="javascript: void(0);">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- end main wrapper -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="../assets/libs/js/main-js.js"></script>
+    {% block javascripts %}{% endblock %}
+</body>
+ 
+</html>

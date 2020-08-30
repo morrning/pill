@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Pools Settings{% endblock %}
+{% block body %}
+    <!-- ============================================================== -->
+    <!-- overview  -->
+    <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <p class="lead">For start mining input your pool worker data.</p>
+            </div>
+        </div>
+    <!-- ============================================================== -->
+    <!-- end overview  -->
+    <!-- ============================================================== -->
+        {{ form_start(form) }}
+        <div class="row">
+            {{ form_errors(form) }}
+            <div class="form-group col-md-12">
+                {{ form_widget(form.address,{'attr':{'placeholder':'URL Address'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_widget(form.username,{'attr':{'placeholder':'Worker ID'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_widget(form.password,{'attr':{'placeholder':'Password'}}) }}
+            </div>             
+        </div>
+        <div class="row">               
+            <div class="form-submit col-md-12">
+                {{ form_widget(form.submit,{'label':'Save changes'}) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+{% endblock %}
