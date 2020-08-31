@@ -66,11 +66,14 @@ class HomeController extends AbstractController
             $em->flush();
 
             //change machine ip address
+            
+            shell_exec("sudo Ifconfig " . $config[0]->getEthName() . ' down');
             shell_exec("sudo ifconfig " . $config[0]->getEthName() . ' ' . $network[0]->getAddress() . ' netmask' . $network[0]->getNetwork());
             shell_exec("sudo route add default gw " . $network[0]->getGateway() . ' ' . $config[0]->getEthName());
             shell_exec("sudo cp /etc/resolv.conf /etc/resolv.orig");
             shell_exec("sudo rm /etc/resolv.conf");
             shell_exec('echo "nameserver ' . $network[0]->getDns1() . '> /etc/resolv.conf"');
+            shell_exec("sudo Ifconfig " . $config[0]->getEthName() . ' up');
             $this->addFlash('success', 'network address changed!');
         }
         return $this->render('network.html.twig', [
@@ -108,8 +111,10 @@ class HomeController extends AbstractController
         $network = $this->getDoctrine()->getRepository('App:Network')->findAll();
 
         return $this->render('overview.html.twig', [
-            'config' => $config,
-            'network' => $network
+            'config' => $config[0],
+            'network' => $network[0],
+            'uptime' => shell_exec("uptime"),
+            'mem' => shell_exec("free -m")
         ]);
     }
 }

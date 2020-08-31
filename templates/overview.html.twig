@@ -23,11 +23,28 @@
                     <p class="card-text">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                                <p>Type:    <span class="text-primary">SR1-B<span></p>
-                            </div>
-                            <div class="col-md-6 col-sm-12">
                                 <img class="img-rounded border border-primary" src="{{asset('assets/images/logo.jpeg')}}">
                             </div> 
+                            <div class="col-md-6 col-sm-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>Type:    <span class="text-primary">SR-1B<span></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>UI Version:    <span class="text-primary">0.0.1<span></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>MAC Address:    <span class="text-primary">unknown<span></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Build Date:    <span class="text-primary">2021/02/5<span></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>Pill OS Version:    <span class="text-primary">0.0.1<span></p>
+                                    </div>
+                                </div>
+                            </div> 
+                            
                         </div>                       
                     </p>
                 </div>
@@ -37,7 +54,25 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">Network Status </h3>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">
+                    <div class="row">
+                            <div class="col-12">
+                                <p>IP Address:    <span class="text-primary">{{network.address}}<span></p>
+                            </div>
+                            <div class="col-12">
+                                <p>Network Address:    <span class="text-primary">{{network.network}}<span></p>
+                            </div>
+                            <div class="col-12">
+                                <p>Gateway Address:    <span class="text-primary">{{network.gateway}}<span></p>
+                            </div>
+                            <div class="col-12">
+                                <p>DNS1 Address:    <span class="text-primary">{{network.dns1}}<span></p>
+                            </div>
+                            <div class="col-12">
+                                <p>DNS2 Address:    <span class="text-primary">{{network.dns2}}<span></p>
+                            </div>
+                        </div>     
+                    </p>
                 </div>
             </div>
         </div>
@@ -47,7 +82,14 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">System </h3>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">
+                        <p>
+                            Uptime: {{ uptime }}
+                        </p>
+                        <p>
+                            Memory: {{ mem }}
+                        </p>
+                    </p>
                 </div>
             </div>
         </div>
