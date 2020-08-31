@@ -66,7 +66,7 @@
                                             <a class="nav-link" href="cards.html">Security</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="cards.html">Network</a>
+                                            <a class="nav-link" href="{{ path('network')}}">Network</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="cards.html">Performance</a>
@@ -79,7 +79,7 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="chart-c3.html">Reboot</a>
+                                            <a class="nav-link" href="{{path('reboot')}}">Reboot</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="chart-c3.html">Facroty reset</a>
@@ -89,7 +89,7 @@
                             </li>
                         
                             <li class="nav-item">
-                                <a class="nav-link" href="../index.html"><i class="fa fa-microchip"></i>Overview</a>
+                                <a class="nav-link" href="{{path('overview')}}"><i class="fa fa-microchip"></i>Overview</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('app_logout')}}"><i class="fas fa-power-off"></i> Logout</a>
@@ -131,6 +131,18 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <p>
+                                {% for message in app.flashes('success') %}
+                                    <div class="alert alert-success">
+                                        <i class="fa fa-info-circle"></i>
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                                {% for message in app.flashes('danger') %}
+                                    <div class="alert alert-danger">
+                                        <i class="fa fa-info-square"></i>
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
                             {% block body %}{% endblock %}
                         </p>
                     </div>

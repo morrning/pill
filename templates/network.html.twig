@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Network Settings{% endblock %}
+{% block body %}
+    <!-- ============================================================== -->
+    <!-- overview  -->
+    <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <p class="lead">Enter your machine network address.</p>
+            </div>
+        </div>
+        <hr>
+    <!-- ============================================================== -->
+    <!-- end overview  -->
+    <!-- ============================================================== -->
+    
+        {{ form_start(form) }}
+        
+        <div class="row">
+            <div class="form-group col-md-12">
+                {{ form_label(form.address)}}
+                {{ form_widget(form.address,{'attr':{'placeholder':'192.168.X.X'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.network)}}
+                {{ form_widget(form.network,{'attr':{'placeholder':'192.168.X.X'}}) }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ form_label(form.gateway)}}
+                {{ form_widget(form.gateway,{'attr':{'placeholder':'192.168.X.X'}}) }}
+            </div> 
+            <hr>
+            <div class="form-group col-md-6">
+                {{ form_label(form.dns1)}}
+                {{ form_widget(form.dns1,{'attr':{'placeholder':'192.168.X.X'}}) }}
+            </div> 
+            <div class="form-group col-md-6">
+                {{ form_label(form.dns2)}}
+                {{ form_widget(form.dns2,{'attr':{'placeholder':'192.168.X.X'}}) }}
+            </div>             
+        </div>
+        <div class="row">               
+            <div class="form-submit col-md-12">
+                {{ form_widget(form.submit,{'label':'Save changes'}) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+{% endblock %}

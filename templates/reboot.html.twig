@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Reboot Machine{% endblock %}
+{% block body %}
+    <!-- ============================================================== -->
+    <!-- overview  -->
+    <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <p class="lead">For reboot your machine click on Reboot!</p>
+            </div>
+        </div>
+        <hr>
+    <!-- ============================================================== -->
+    <!-- end overview  -->
+    <!-- ============================================================== -->
+    
+        {{ form_start(form) }}
+        <div class="row">               
+            <div class="form-submit col-md-12">
+                {{ form_widget(form.submit,{'label':'Reboot machine'}) }}
+            </div>
+        </div>
+        {{ form_end(form) }}
+{% endblock %}

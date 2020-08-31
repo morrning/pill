@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Overview{% endblock %}
+{% block body %}
+    <!-- ============================================================== -->
+    <!-- overview  -->
+    <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <p class="lead">System Information</p>
+            </div>
+        </div>
+        <hr>
+    <!-- ============================================================== -->
+    <!-- end overview  -->
+    <!-- ============================================================== -->
+    
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Version</h3>
+                    <p class="card-text">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <p>Type:    <span class="text-primary">SR1-B<span></p>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <img class="img-rounded border border-primary" src="{{asset('assets/images/logo.jpeg')}}">
+                            </div> 
+                        </div>                       
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Network Status </h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">System </h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
