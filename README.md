@@ -3,7 +3,7 @@
 >  Next generation of miner platform based on linux.
 
 
-###Links
+##Links
 
 [Compamy](https://sarkesh.org/)
 
